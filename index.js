@@ -13,16 +13,16 @@ function createFareMultiplier(multiplier) {
   return fare => fare * multiplier
 }
 
-const doubler = createFareMultiplier(2)
-function fareDoubler(fare) {
-  return doubler(fare)
+const fareDoubler = function(fare) {
+  return createFareMultiplier(2)(fare)
 }
 
-const tripler = createFareMultiplier(3)
-function fareTripler(fare) {
-  return tripler(fare)
+const fareTripler = function(fare) {
+  return createFareMultiplier(3)(fare)
 }
 
 function selectDifferentDrivers(driversArray, driverFunction) {
   return driverFunction(driversArray)
 }
+
+console.log(fareTripler(3))
